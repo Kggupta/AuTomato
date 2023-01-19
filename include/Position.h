@@ -13,6 +13,10 @@ class Position {
         Position(int current, int line, int column, string file, string fcontent);
         Position* advance(char current);
         Position copy();
+        
+        // Copy constructor to replace copy()
+        Position(const Position & rhs);
+
 
         int position = 0;
         int line = 0;

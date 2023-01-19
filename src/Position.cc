@@ -22,3 +22,11 @@ Position * Position::advance(char current) {
 Position Position::copy() {
     return Position(position, line, column, file, fcontent);
 }
+
+Position::Position(const Position & rhs) {
+	position = rhs.position;
+	line = rhs.line;
+	column = rhs.column;
+	file = rhs.file;
+	fcontent = rhs.fcontent;
+}
