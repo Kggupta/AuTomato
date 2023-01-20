@@ -1,0 +1,19 @@
+name: automato
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: autoreconf
+      run: autoreconf --install
+    - name: configure
+      run: ./configure
+    - name: make distcheck
+      run: make distcheck
