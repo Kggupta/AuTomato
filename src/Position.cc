@@ -27,6 +27,6 @@ Position::Position(const Position & rhs) {
 	position = rhs.position;
 	line = rhs.line;
 	column = rhs.column;
-	file = rhs.file;
-	fcontent = rhs.fcontent;
+	file = move(rhs.file);
+	fcontent = move(rhs.fcontent);
 }
